@@ -1,0 +1,55 @@
+/* Logo Navbar */
+.logo {
+  height: 50px;
+  width: 50px;
+}
+
+#beranda {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("img/banner.jpg") center/cover no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* Statistik Card */
+.stat-card {
+  background-color: #0d6efd;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.stat-card i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/*kepsek*/
+.foto-kepsek {
+  background: #0d6efd; /* biru bootstrap */
+  border-radius: 20px;
+  padding: 20px;
+  display: inline-block;
+}
+
+.foto-kepsek img {
+  border-radius: 10px;
+  max-height: 350px;
+  object-fit: cover;
+}
+
+.container h4 span {
+  color: #0d6efd;
+}
+
+/* Card Jurusan Image */
+.card-img-top {
+  max-height: 150px;
+  object-fit: contain;
+  padding: 10px;
+}

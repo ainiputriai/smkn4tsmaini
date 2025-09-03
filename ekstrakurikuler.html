@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMKN 4 Tasikmalaya</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <style>
+      /* Spinner */
+      #spinner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      .spinner {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 8px solid rgba(0, 0, 0, 0.1);
+        border-top: 8px solid #3498db;
+        animation: spin 3.5s linear infinite;
+      }
+
+     #spinner img {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Tambahan gaya */
+      .logo {
+        height: 40px;
+      }
+
+      /* Hero full screen */
+      #beranda {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        background: url('img/imgbanner.JPG') center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+      }
+      #beranda::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+      }
+      #beranda .content {
+        position: relative;
+        text-align: center;
+        z-index: 2;
+      }
+
+      /* Ekstrakurikuler */
+      :root {
+        --card-bg: #ffffff;
+        --page-bg: linear-gradient(135deg,#f7f8fc 0%, #eef2ff 100%);
+        --accent: #5b6bff;
+        --text: #111827;
+        --radius: 12px;
+        --gap: 18px;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        background: var(--page-bg);
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .section-ekskul {
+        padding: 40px 20px;
+      }
+
+      h1 {
+        margin: 0 0 20px 0;
+        font-size: 22px;
+        letter-spacing: 0.2px;
+        text-align: center;
+      }
+
+      /* Grid: responsive, kolom minimal 140px */
+      .grid {
+        display: grid;
+        gap: var(--gap);
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        align-items: start;
+      }
+
+      .card {
+        background: var(--card-bg);
+        border-radius: var(--radius);
+        padding: 12px;
+        box-shadow: 0 6px 18px rgba(18,23,50,0.06);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: transform .18s ease, box-shadow .18s ease;
+      }
+      .card:focus-within,
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(18,23,50,0.09);
+      }
+
+      .img-wrap {
+        width: 100%;
+        padding-top: 100%; /* 1:1 aspect ratio */
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        background: linear-gradient(180deg, #fafbff 0%, #f3f4ff 100%);
+        display: block;
+        margin-bottom: 10px;
+      }
+      .img-wrap img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* foto tidak terpotong */
+      }
+
+      .name {
+        font-weight: 600;
+        font-size: 15px;
+        margin: 6px 0 0;
+      }
+
+      @media (max-width:420px) {
+        .section-ekskul {
+          padding: 20px;
+        }
+        .grid { gap: 12px; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Spinner -->
+  <div id="spinner">
+    <img src="img/imglogo.png" alt="Logo" />
+    <div class="spinner">
+    </div>
+  </div>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg text-light shadow-sm"
+      style="background: linear-gradient(135deg, #4facfe, #00f2fe)"
+    >
+      <div class="container">
+        <!-- Logo / Brand -->
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="img/logosmk (2).png" alt="Logo" class="me-2 logo" />
+          <span>SMKN 4 Tasikmalaya</span>
+        </a>
+
+        <!-- Toggler / Mobile Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu Navbar -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+            <!-- Dropdown Profil -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="profilDropdown" role="button" data-bs-toggle="dropdown">Profil</a>
+              <ul class="dropdown-menu" aria-labelledby="profilDropdown">
+                <li><a class="dropdown-item" href="sejarah.html">Sejarah</a></li>
+                <li><a class="dropdown-item" href="visi-misi.html">Visi & Misi</a></li>
+                <li><a class="dropdown-item" href="kepsek.html">Kepala Sekolah</a></li>
+                <li><a class="dropdown-item" href="indentitas.html">Identitas Sekolah</a></li>
+              </ul>
+            </li>
+
+            <!-- Dropdown Akademik -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="akademikDropdown" role="button" data-bs-toggle="dropdown">Akademik</a>
+              <ul class="dropdown-menu" aria-labelledby="akademikDropdown">
+                <li><a class="dropdown-item" href="organisasi.html">Organisasi</a></li>
+                <li><a class="dropdown-item" href="ekstrakurikuler.html">Ekstrakurikuler</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="jurusan.html">Jurusan</a></li>
+            <li class="nav-item"><a class="nav-link" href="berita.html">Berita</a></li>
+            <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
+            <li class="nav-item"><a class="nav-link" href="#footer">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda">
+      <div class="content">
+        <h1 class="fw-bold mb-3">Selamat Datang di SMKN 4 Tasikmalaya</h1>
+        <p class="lead">Sekolah Pusat Keunggulan</p>
+      </div>
+    </section>
+
+    <!-- Ekstrakurikuler -->
+    <div class="section-ekskul">
+      <div class="container">
+        <h1>Ekstrakurikuler</h1>
+        <div class="grid">
+          <div class="card"><div class="img-wrap"><img src="image/imagepks.png" alt="PKS"></div><div class="name">PKS</div></div>
+          <div class="card"><div class="img-wrap"><img src="image/imageit.png" alt="IT Club"></div><div class="name">IT Club</div></div>
+          <div class="card"><div class="img-wrap"><img src="image/imageec.png" alt="English Club"></div><div class="name">English Club</div></div>
+          <div class="card"><div class="img-wrap"><img src="image/imagepmr.png" alt="PMR"></div><div class="name">PMR</div></div>
+          <div class="card"><div class="img-wrap"><img src="image/imagepramuka.png" alt="Pramuka"></div><div class="name">Pramuka</div></div>
+          <div class="card"><div class="img-wrap"><img src="image/imageppb.png" alt="Paskibra"></div><div class="name">Paskibra</div></div>
+          <div class="card"><div class="img-wrap"><img src="image/imagecinem.png" alt="Cinematography"></div><div class="name">Cinematography</div></div>
+          <div class="card"><div class="img-wrap"><img src="image/imagelaskar.png" alt="Laskar Pustaka"></div><div class="name">Laskar Pustaka</div></div>
+          <div class="card"><div class="img-wrap"><img src="image/imagefutsal.png" alt="Futsal"></div><div class="name">Futsal</div></div>
+          <div class="card"><div class="img-wrap"><img src="image/sepakbola.B13aM3Fk.jpeg" alt="Sepak Bola"></div><div class="name">Sepak Bola</div></div>
+          <div class="card"><div class="img-wrap"><img src="image/imagebasket.png" alt="Basket"></div><div class="name">Basket</div></div>
+          <div class="card"><div class="img-wrap"><img src="image/imagevoly.jpeg" alt="Volly"></div><div class="name">Volly</div></div>
+          <div class="card"><div class="img-wrap"><img src="image/imagepd.jpg" alt="Perisai Diri"></div><div class="name">Perisai Diri</div></div>
+          <div class="card"><div class="img-wrap"><img src="image/imagebultang.png" alt="Bulu Tangkis"></div><div class="name">Bulu Tangkis</div></div>
+          <div class="card"><div class="img-wrap"><img src="image/imageirma.png" alt="IRMA"></div><div class="name">IRMA</div></div>
+          <div class="card"><div class="img-wrap"><img src="image/imageseni.png" alt="Seni"></div><div class="name">Seni</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="text-light pt-5 pb-3" style="background: linear-gradient(135deg, #4facfe, #00f2fe)">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold">SMKN 4 Tasikmalaya</h5>
+            <p>Jl. Depok, Sukamenak, Purbaratu,<br />Kota Tasikmalaya, Jawa Barat 46196</p>
+            <p>Email: <a href="mailto:smkn4tsm@gmail.com" class="text-decoration-none text-light">smkn4tsm@gmail.com</a></p>
+            <p>Telepon: (0265) 123456</p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold">Berlangganan Info</h5>
+            <p>Dapatkan info terbaru dari sekolah langsung ke email Anda.</p>
+            <form class="d-flex flex-column" onsubmit="alert('Terimakasih sudah berlangganan!'); return false;">
+              <input type="email" class="form-control mb-2" placeholder="Masukkan email Anda" required />
+              <button type="submit" class="btn btn-light text-primary fw-bold">Berlangganan</button>
+            </form>
+          </div>
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold">Lokasi Sekolah</h5>
+            <div class="ratio ratio-16x9 rounded shadow-sm">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="100%" style="border: 0" allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <p class="mb-0">&copy; 2025 SMKN 4 Tasikmalaya. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Spinner JS -->
+    <script>
+      window.addEventListener("load", function () {
+        document.getElementById("spinner").style.display = "none";
+      });
+    </script>
+  </body>
+</html>

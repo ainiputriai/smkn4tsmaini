@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMKN 4 Tasikmalaya</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+  <!-- Custom CSS -->
+  <style>
+    /* Spinner */
+    #spinner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .spinner {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 8px solid rgba(0, 0, 0, 0.1);
+      border-top: 8px solid #3498db;
+      animation: spin 3.5s linear infinite;
+    }
+
+    #spinner img {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Tambahan gaya */
+    .logo {
+      height: 40px;
+    }
+
+    .stat-card {
+      padding: 20px;
+      border-radius: 10px;
+      background: #f8f9fa;
+      transition: transform 0.3s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-card i {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #0d6efd;
+    }
+  </style>
+</head>
+
+<body>
+   <!-- Spinner -->
+  <div id="spinner">
+    <img src="img/imglogo.png" alt="Logo" />
+    <div class="spinner">
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg text-light shadow-sm"
+    style="background: linear-gradient(135deg, #4facfe, #00f2fe)">
+    <div class="container">
+      <!-- Logo / Brand -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="img/imglogo.png" alt="Logo" class="me-2 logo" />
+        <span>SMKN 4 Tasikmalaya</span>
+      </a>
+
+      <!-- Toggler / Mobile Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Menu Navbar -->
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <!-- Menu Navbar -->
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+              <!-- Dropdown 1 -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="profilDropdown" role="button"
+                  data-bs-toggle="dropdown">
+                  Profil
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="profilDropdown">
+                  <li>
+                    <a class="dropdown-item" href="sejarah.html">Sejarah</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="visi-misi.html">Visi & Misi</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="kepsek.html">Kepala Sekolah</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="indentitas.html">Identitas Sekolah</a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Dropdown 2 -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="akademikDropdown" role="button"
+                  data-bs-toggle="dropdown">
+                  Akademik
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="akademikDropdown">
+                  <li>
+                    <a class="dropdown-item" href="organisasi.html">Organisasi</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="ekstrakurikuler.html">Ekstrakurikuler</a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Link biasa -->
+              <li class="nav-item">
+                <a class="nav-link" href="jurusan.html">Jurusan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="berita.html">Berita</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="galeri.html">Galeri</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="kontak.html">Kontak</a>
+              </li>
+            </ul>
+          </div>
+      </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="beranda" style="
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: url('img/banner2.JPG') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+">
+    <!-- Overlay gelap -->
+    <div style="
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+  "></div>
+
+    <!-- Teks selamat datang -->
+    <div style="position: relative; text-align: center; z-index: 2;">
+      <h1 class="fw-bold mb-3">Selamat Datang di SMKN 4 Tasikmalaya</h1>
+      <p class="lead">Sekolah Menengah Kejuruan Unggulan dengan Fasilitas Modern dan Guru Kompeten</p>
+    </div>
+  </section>
+
+
+
+
+  <!-- Konten -->
+  <div class="container my-5">
+    <div class="row g-4">
+      <!-- Info Sekolah -->
+      <div class="col-md-5">
+        <div class="contact-card">
+          <h5 class="fw-bold mb-3">Informasi Sekolah</h5>
+          <p><i class="fas fa-map-marker-alt text-primary"></i> Jl. Depok, Sukamenak, Purbaratu, Kota Tasikmalaya, Jawa
+            Barat 46196</p>
+          <p><i class="fas fa-phone-alt text-primary"></i> (0265) 123456</p>
+          <p><i class="fas fa-envelope text-primary"></i> smkn4tsm@gmail.com</p>
+          <p><i class="fas fa-globe text-primary"></i> www.smkn4tsm.sch.id</p>
+        </div>
+
+        <div class="contact-card">
+          <h5 class="fw-bold mb-3">Lokasi Sekolah</h5>
+          <div class="ratio ratio-16x9">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.732120482152!2d108.22273477571282!3d-7.154620170704726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f5774c8c6c3ab%3A0xb5d22962d0e1bb0!2sSMKN%204%20Tasikmalaya!5e0!3m2!1sid!2sid!4v1725274200000!5m2!1sid!2sid"
+              width="100%" height="100%" style="border: 0" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Kontak -->
+      <div class="col-md-7">
+        <div class="contact-card">
+          <h5 class="fw-bold mb-3">Kirim Pesan</h5>
+          <form onsubmit="alert('Pesan Anda sudah terkirim!'); return false;">
+            <div class="mb-3">
+              <label class="form-label">Nama Lengkap</label>
+              <input type="text" class="form-control" placeholder="Masukkan nama Anda" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" placeholder="Masukkan email Anda" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Subjek</label>
+              <input type="text" class="form-control" placeholder="Judul pesan" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Pesan</label>
+              <textarea class="form-control" rows="5" placeholder="Tulis pesan Anda" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Kirim Pesan</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer class="text-light pt-5 pb-3" style="background: linear-gradient(135deg, #4facfe, #00f2fe)">
+    <div class="container">
+      <div class="row">
+        <!-- Kolom Info Sekolah -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">SMKN 4 Tasikmalaya</h5>
+          <p>
+            Jl. Depok, Sukamenak, Purbaratu,<br />
+            Kota Tasikmalaya, Jawa Barat 46196
+          </p>
+          <p>
+            Email:
+            <a href="mailto:smkn4tsm@gmail.com" class="text-decoration-none text-light">smkn4tsm@gmail.com</a>
+          </p>
+          <p>Telepon: (0265) 123456</p>
+        </div>
+
+        <!-- Kolom Berlangganan Info -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">Berlangganan Info</h5>
+          <p>Dapatkan info terbaru dari sekolah langsung ke email Anda.</p>
+          <form class="d-flex flex-column" onsubmit="alert('Terimakasih sudah berlangganan!'); return false;">
+            <input type="email" class="form-control mb-2" placeholder="Masukkan email Anda" required />
+            <button type="submit" class="btn btn-light text-primary fw-bold">
+              Berlangganan
+            </button>
+          </form>
+        </div>
+
+        <!-- Kolom Google Maps -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">Lokasi Sekolah</h5>
+          <div class="ratio ratio-16x9 rounded shadow-sm">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.732120482152!2d108.22273477571282!3d-7.154620170704726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f5774c8c6c3ab%3A0xb5d22962d0e1bb0!2sSMKN%204%20Tasikmalaya!5e0!3m2!1sid!2sid!4v1725274200000!5m2!1sid!2sid"
+              width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-center mt-4">
+        <p class="mb-0">
+          &copy; 2025 SMKN 4 Tasikmalaya. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Spinner JS -->
+  <script>
+    window.addEventListener("load", function () {
+      document.getElementById("spinner").style.display = "none";
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMKN 4 Tasikmalaya</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+  <!-- Custom CSS -->
+  <style>
+    /* Spinner */
+    #spinner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .spinner {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 8px solid rgba(0, 0, 0, 0.1);
+      border-top: 8px solid #3498db;
+      animation: spin 3.5s linear infinite;
+    }
+
+    #spinner img {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Tambahan gaya */
+    .logo {
+      height: 40px;
+    }
+
+    .stat-card {
+      padding: 20px;
+      border-radius: 10px;
+      background: #f8f9fa;
+      transition: transform 0.3s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-card i {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #0d6efd;
+    }
+  </style>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+    }
+
+    .jurusan-header {
+
+      color: #000000;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .jurusan-header h1 {
+      font-weight: bold;
+    }
+
+    .jurusan-section {
+      padding: 50px 0;
+    }
+
+    /* FOTO POTRET + OVERLAY TEXT */
+    .foto-potret-container {
+      position: relative;
+    }
+
+    .foto-potret {
+      border-radius: 15px;
+      object-fit: cover;
+      width: 100%;
+      max-height: 500px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(0, 102, 255, 0.6),
+        0 0 20px rgba(0, 102, 255, 0.4);
+    }
+
+    /* Carousel kanan */
+    .carousel-inner img {
+      border-radius: 15px;
+      height: 500px;
+      object-fit: cover;
+    }
+    .foto-potret-container {
+  height: 500px; /* sama dengan carousel */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foto-potret {
+  width: 100%;
+  height: 100%; /* tinggi penuh */
+  object-fit: cover; /* proporsi terjaga */
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.jurusan-header h1,
+.jurusan-header p {
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 102, 255, 0.4);
+  color: #000;
+}
+
+  </style>
+</head>
+
+<body>
+   <!-- Spinner -->
+  <div id="spinner">
+    <img src="img/imglogo.png" alt="Logo" />
+    <div class="spinner">
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg text-light shadow-sm"
+    style="background: linear-gradient(135deg, #4facfe, #00f2fe)">
+    <div class="container">
+      <!-- Logo / Brand -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="img/imglogo.png" alt="Logo" class="me-2 logo" />
+        <span>SMKN 4 Tasikmalaya</span>
+      </a>
+
+      <!-- Toggler / Mobile Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Menu Navbar -->
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <!-- Menu Navbar -->
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+              <!-- Dropdown 1 -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="profilDropdown" role="button"
+                  data-bs-toggle="dropdown">
+                  Profil
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="profilDropdown">
+                  <li>
+                    <a class="dropdown-item" href="sejarah.html">Sejarah</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="visi-misi.html">Visi & Misi</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="kepsek.html">Kepala Sekolah</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="indentitas.html">Identitas Sekolah</a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Dropdown 2 -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="akademikDropdown" role="button"
+                  data-bs-toggle="dropdown">
+                  Akademik
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="akademikDropdown">
+                  <li>
+                    <a class="dropdown-item" href="organisasi.html">Organisasi</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="ekstrakurikuler.html">Ekstrakurikuler</a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Link biasa -->
+              <li class="nav-item">
+                <a class="nav-link" href="jurusan.html">Jurusan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="berita.html">Berita</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="galeri.html">Galeri</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="kontak.html">Kontak</a>
+              </li>
+            </ul>
+          </div>
+      </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="beranda" style="
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: url('img1/bannerjurusan.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+">
+    <!-- Overlay gelap -->
+    <div style="
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+  "></div>
+
+    <!-- Teks selamat datang -->
+    <div style="position: relative; text-align: center; z-index: 2;">
+      <h1 class="fw-bold mb-3">Selamat Datang di SMKN 4 Tasikmalaya</h1>
+      <p class="lead">Sekolah Menengah Kejuruan Unggulan dengan Fasilitas Modern dan Guru Kompeten</p>
+    </div>
+  </section>
+
+
+
+
+  <!-- Header -->
+  <div class="jurusan-header">
+    <h1>Jurusan Unggulan</h1>
+    <p>Foto jurusan dan kegiatan siswa SMKN 4 Tasikmalaya</p>
+  </div>
+
+
+
+   <div class="container jurusan-section">
+  <!-- PPLG -->
+  <div class="row g-4 align-items-center mb-5">
+    <div class="col-md-4">
+      <div class="foto-potret-container">
+        <img src="img1/img1pplg1.jpeg" alt="PPLG" class="foto-potret">
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div id="carouselPPLG" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img1/potopplg1.jpeg" class="d-block w-100" alt="Slide 1">
+          </div>
+          <div class="carousel-item">
+            <img src="img1/potopplg2.jpg" class="d-block w-100" alt="Slide 2">
+          </div>
+          <div class="carousel-item">
+            <img src="img1/potopplg3.jpg" class="d-block w-100" alt="Slide 3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPPLG" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselPPLG" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TBSM -->
+  <div class="row g-4 align-items-center mb-5">
+    <div class="col-md-4">
+      <div class="foto-potret-container">
+        <img src="img1/img1tbsm2.jpeg" alt="TBSM" class="foto-potret">
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div id="carouselTBSM" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img1/tbsm1.PNG" class="d-block w-100" alt="Slide 1">
+          </div>
+          <div class="carousel-item">
+            <img src="img1/tbsm2.PNG" class="d-block w-100" alt="Slide 2">
+          </div>
+          <div class="carousel-item">
+            <img src="img1/tbsm3.jpg" class="d-block w-100" alt="Slide 3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselTBSM" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselTBSM" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TJKT -->
+  <div class="row g-4 align-items-center mb-5">
+    <div class="col-md-4">
+      <div class="foto-potret-container">
+        <img src="img1/img1tjkt2.jpeg" alt="TJKT" class="foto-potret">
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div id="carouselTJKT" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img1/tjkt.jpg" class="d-block w-100" alt="Slide 1">
+          </div>
+          <div class="carousel-item">
+            <img src="img1/tjkt1.jpg" class="d-block w-100" alt="Slide 2">
+          </div>
+          <div class="carousel-item">
+            <img src="img1/tjkt2.jpg" class="d-block w-100" alt="Slide 3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselTJKT" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselTJKT" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DKV -->
+  <div class="row g-4 align-items-center mb-5">
+    <div class="col-md-4">
+      <div class="foto-potret-container">
+        <img src="img1/img1dkv.jpeg" alt="DKV" class="foto-potret">
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div id="carouselDKV" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img1/dkv1.jpg" class="d-block w-100" alt="Slide 1">
+          </div>
+          <div class="carousel-item">
+            <img src="img1/dkv2.jpg" class="d-block w-100" alt="Slide 2">
+          </div>
+          <div class="carousel-item">
+            <img src="img1/dkv3.jpg" class="d-block w-100" alt="Slide 3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDKV" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDKV" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOI -->
+  <div class="row g-4 align-items-center mb-5">
+    <div class="col-md-4">
+      <div class="foto-potret-container">
+        <img src="img1/img1toi.jpeg" alt="TOI" class="foto-potret">
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div id="carouselTOI" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img1/toi1.jpg" class="d-block w-100" alt="Slide 1">
+          </div>
+          <div class="carousel-item">
+            <img src="img1/toi2.jpg" class="d-block w-100" alt="Slide 2">
+          </div>
+          <div class="carousel-item">
+            <img src="img1/toi3.jpg" class="d-block w-100" alt="Slide 3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselTOI" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselTOI" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+
+
+  <footer class="text-light pt-5 pb-3" style="background: linear-gradient(135deg, #4facfe, #00f2fe)">
+    <div class="container">
+      <div class="row">
+        <!-- Kolom Info Sekolah -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">SMKN 4 Tasikmalaya</h5>
+          <p>
+            Jl. Depok, Sukamenak, Purbaratu,<br />
+            Kota Tasikmalaya, Jawa Barat 46196
+          </p>
+          <p>
+            Email:
+            <a href="mailto:smkn4tsm@gmail.com" class="text-decoration-none text-light">smkn4tsm@gmail.com</a>
+          </p>
+          <p>Telepon: (0265) 123456</p>
+        </div>
+
+        <!-- Kolom Berlangganan Info -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">Berlangganan Info</h5>
+          <p>Dapatkan info terbaru dari sekolah langsung ke email Anda.</p>
+          <form class="d-flex flex-column" onsubmit="alert('Terimakasih sudah berlangganan!'); return false;">
+            <input type="email" class="form-control mb-2" placeholder="Masukkan email Anda" required />
+            <button type="submit" class="btn btn-light text-primary fw-bold">
+              Berlangganan
+            </button>
+          </form>
+        </div>
+
+        <!-- Kolom Google Maps -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">Lokasi Sekolah</h5>
+          <div class="ratio ratio-16x9 rounded shadow-sm">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.732120482152!2d108.22273477571282!3d-7.154620170704726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f5774c8c6c3ab%3A0xb5d22962d0e1bb0!2sSMKN%204%20Tasikmalaya!5e0!3m2!1sid!2sid!4v1725274200000!5m2!1sid!2sid"
+              width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-center mt-4">
+        <p class="mb-0">
+          &copy; 2025 SMKN 4 Tasikmalaya. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Spinner JS -->
+  <script>
+    window.addEventListener("load", function () {
+      document.getElementById("spinner").style.display = "none";
+    });
+  </script>
+</body>
+
+</html>
